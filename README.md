@@ -1,44 +1,17 @@
-keepass2passwordstate  -  README
+keepass2csv  -  README
 =====================
-keepass2passwordstate.xsl
+keepass2csv.xsl
 
-Convert KeePass XML (2.x) format ClickStudios PasswordState Import format
+Convert KeePass XML (2.x) format to CSV, columns tailored to 1Password's CSV import
 
 Usage
   Either:
   a) - Export from Keepass 2 to XML
-     - Apply xsl to exported xml (I use Notepad++. Complements->XML tools->XSL Transformation) and provide parameter values for PasswordListID and AccountType
-  b) Apply xsl directly from Keepass 2 (File->Export->Transform using XSL Template). Here you cannot pass parameters, so you have to edit keepass2passwordstate.xsl
+     - Apply xsl to exported xml (e.g with Notepad++, Plugins->XML tools->XSL Transformation)
+  b) Apply xsl directly from Keepass 2 (File->Export->Transform using XSL Template).
   
-  Notes: * Its mandatory to know the passwordlist ID. 
-         * All passwords are imported into the same password list. Then you can use bulk move to reorder
-		 * The original keepass "folder"  is stored into Description.
-		 * !!File Must have .csv extension. If not, passwordstate refuses to import it.!!
-  
-  
-       Field Mapping
-	   
-	   PasswordState     Keepass
-	   ================= =====================================================
-	   PasswordListID;   As set in param PasswordListID in config section
-	   Title;            Title
-	   UserName;         Username
-	   Description;      Folder Hierarchy
-	   AccountType;      As set in param AccountType in config section
-	   Notes;		     Notes
-	   URL;              URL
-	   Password;         Password
-	   ExpiryDate;		 Expiration Date
-	   GenericField1;
-	   GenericField2;
-	   GenericField3;
-	   GenericField4;
-	   GenericField5;
-	   GenericField6;
-	   GenericField7;
-	   GenericField8;
-	   GenericField9;
-	   GenericField10
-	   
-  
+  Notes: * Notes lists "From KeePass conversion" on all entries
+         * The original keepass "folder" is stored into Notes, along with the icon that was used.
+		 * Not all icons numbers are translated, you may see the numeric IconID
+
   	   
